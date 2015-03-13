@@ -2,7 +2,6 @@ $("#gravatar_checker").on("submit", function (event) {
   event.preventDefault();
   var email=$("#email").val();
   $.get("/email?email=" + email, function(getImage) {
-    $("body").append("<img src=\"" + getImage + "\"></img><br> \
-                      <a href=\"index.html\">Check another</a>");
+    $("div.picture").replaceWith("<div class=\"picture\"><img src=\"" + getImage + "\"></img></div>");
   });
 });
